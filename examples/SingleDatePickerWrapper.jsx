@@ -16,6 +16,7 @@ class SingleDatePickerWrapper extends React.Component {
 
   onDateChange(date) {
     this.setState({ date });
+    this.props.onChange(date);
   }
 
   onFocusChange({ focused }) {
@@ -37,5 +38,9 @@ class SingleDatePickerWrapper extends React.Component {
     );
   }
 }
+
+SingleDatePickerWrapper.propTypes = {
+  onChange: React.PropTypes.func.isRequired,
+};
 
 export default SingleDatePickerWrapper;
